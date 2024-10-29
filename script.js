@@ -6,7 +6,7 @@ document.getElementById('pushButton').addEventListener('click', function() {
 
     if (inputValue !== '' && stack.length < maxStackSize) {
         stack.push(inputValue);
-        document.getElementById('stackInput').value = ''; // Clear input field
+        document.getElementById('stackInput').value = '';
         updateStackDisplay();
     }
 });
@@ -21,12 +21,10 @@ document.getElementById('popButton').addEventListener('click', function() {
 function updateStackDisplay() {
     const stackDisplay = document.getElementById('stackDisplay').children;
     
-    // Clear stack display
     for (let i = 0; i < maxStackSize; i++) {
         stackDisplay[i].textContent = '';
     }
 
-    // Update stack display
     for (let i = 0; i < stack.length; i++) {
         stackDisplay[maxStackSize - 1 - i].textContent = stack[i];
     }
